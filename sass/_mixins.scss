@@ -1,0 +1,183 @@
+@forward "colores";
+$bg-event-info: #1a263f;
+$color-white: #ffffff;
+$color-gris-opacity: rgba(255, 255, 255, 0.8);
+$color-light-blue: #50aade;
+$fontFamyli: "Poppins", sans-serif;
+$linkDecoration: none;
+
+@mixin label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.07em;
+  color: #606060;
+  margin: 0;
+  padding: 0;
+}
+@mixin input {
+  height: 2.5rem;
+  width: 15.7607rem;
+  border-radius: 0.9375rem;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@mixin flex-direction($direction, $gap: null) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+@mixin flex-center($center-x: false, $center-y: false, $gap: null) {
+  display: flex;
+
+  @if $center-x {
+    justify-content: center;
+  }
+
+  @if $center-y {
+    align-items: center;
+  }
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+@mixin text-format(
+  $font-size: null,
+  $font-weight: null,
+  $letter-spacing: null,
+  $color: null
+) {
+  @if $font-size != null {
+    font-size: $font-size;
+  }
+
+  @if $font-weight != null {
+    font-weight: $font-weight;
+  }
+
+  @if $letter-spacing != null {
+    letter-spacing: $letter-spacing;
+  }
+
+  @if $color != null {
+    color: $color;
+  }
+}
+
+@mixin p-m($padding: null, $margin: null, $box-sizing: null) {
+  @if $padding != null {
+    padding: $padding;
+  }
+
+  @if $margin != null {
+    margin: $margin;
+  }
+
+  @if $box-sizing != null {
+    box-sizing: border-box;
+  }
+}
+
+@mixin c-button-blue-dark() {
+  background-color: transparent;
+  border: none;
+  @include flex-center(true, true, null);
+}
+@mixin span-led($active: false) {
+  @if $active {
+    background-color: $color-light-blue;
+  } @else {
+    width: 1.5625rem;
+    height: 0.375rem;
+    background-color: $color-white;
+    border-radius: 3.125rem;
+  }
+}
+
+@mixin textoSpan($weight, $opacity: 1) {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: 13px;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  opacity: $opacity;
+}
+@mixin titleH4 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+}
+@mixin texto($fontWeight: 700, $fontSize: 15px, $color: #fff) {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $color;
+}
+/* button light blue gradiente */
+@mixin button-light-blue-gradiente(
+  $width: 14.1875rem,
+  $height: 2.875rem,
+  $fontWeight: 800,
+  $fontSize: 0.875rem,
+  $letterSpacing: 0.07em,
+  $color: #fff
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  width: $width;
+  height: 2.875rem;
+  background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+  border-radius: 1.875rem;
+  border: none;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  letter-spacing: $letterSpacing;
+  color: $color;
+  cursor: pointer;
+}
+
+@mixin button-border-white-bg-transparent(
+  $width: 14.1875rem,
+  $height: 2.875rem,
+  $fontWeight: 800,
+  $fontSize: 0.875rem,
+  $letterSpacing: 0.07em,
+  $color: #fff
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  width: $width;
+  height: 2.875rem;
+  background-color: transparent;
+  border-radius: 1.875rem;
+  border: 0.3rem solid #fff;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  letter-spacing: $letterSpacing;
+  color: $color;
+  cursor: pointer;
+}
+/* ----------------------------------------------- */
+

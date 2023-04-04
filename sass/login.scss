@@ -1,0 +1,264 @@
+@use "./mixins" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamyli;
+}
+
+
+
+.section-footer {
+    /* 
+      background-color: $bgFondo; */
+    background-image: url("../img/bgFondo.png");
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    /*  background-position: center center; */
+    background-size: cover;
+    position: relative;
+  
+    &__img-footer {
+      width: 100%;
+      height: 30em;
+      background-color: #2894ecd7;
+    }
+  
+    &__container-logo {
+      padding: 6rem 0 0 0;
+      img {
+        display: block;
+        margin: 0 0 0 5rem;
+        padding: 3rem 0;
+      }
+    }
+    &__container-col {
+      display: flex;
+      width: calc(100vw - 10rem);
+      margin: 0 5rem;
+      justify-content: space-between;
+    }
+  
+    &__col1-section-nosotros {
+      height: 11.625rem;
+      width: 13.625rem;
+    }
+    &__p-nosotros {
+      margin: 0;
+      @include text-format(0.8125rem, 400, null, $color-white);
+      opacity: 0.5;
+    }
+    &__h4-nosotros {
+      @include titleH4;
+      padding: 0 0 1rem 0;
+    }
+    &__col1-section-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &__h4-contacto {
+      @include titleH4();
+      padding: 0 0 1rem 0;
+    }
+    /* links contacto estilos */
+    &__container-links-contacto {
+      display: flex;
+      width: 15.625rem;
+    }
+  
+    &__container-links-link {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      img {
+        margin-left: 0.4rem;
+      }
+      span {
+        @include textoSpan(400);
+      }
+    }
+  
+    &__container-links-telephone {
+      display: flex;
+      align-items: center;
+  
+      gap: 0.5rem;
+      height: 2.625rem;
+      width: 12rem;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+      border-radius: 30px;
+      text-decoration: none;
+  
+      img {
+        height: 1rem;
+        width: 16.222978591918945px;
+        margin-left: 0.4rem;
+      }
+      span {
+        @include textoSpan(800);
+      }
+    }
+    /* ------------------------------------------ */
+    &__container-links-servicios {
+      text-decoration: none;
+      span {
+        @include textoSpan(400, 0.5);
+      }
+    }
+    &__container-links-cat-prop {
+      text-decoration: none;
+      span {
+        @include textoSpan(400, 0.5);
+      }
+    }
+    &__container-links-op {
+      text-decoration: none;
+  
+      span {
+        @include textoSpan(400);
+        font-size: 1.25rem;
+      }
+    }
+    &__container-links-partners {
+      text-decoration: none;
+      span {
+        @include textoSpan(400, 0.5);
+      }
+    }
+    &__container-links-comunidad {
+      text-decoration: none;
+      span {
+        @include textoSpan(400, 0.5);
+      }
+    }
+    &__container-links-op2 {
+      text-decoration: none;
+      span {
+        @include textoSpan(400);
+        font-size: 1.25rem;
+      }
+    }
+  
+    &__container-col-col2 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    &__col2-section-servicios {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      h4 {
+        padding: 0 0 1rem 0;
+        @include titleH4;
+      }
+    }
+    &__col2-section-cat-prop {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      h4 {
+        padding: 0 0 1rem 0;
+        @include titleH4;
+      }
+    }
+    &__col2-section-links-op {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &__container-col-col3 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &__col3-section-partners {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &__h4-partners {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+    &__col3-section-comunidades {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      h4 {
+        padding: 0 0 1rem 0;
+        @include titleH4;
+      }
+    }
+    &__col3-section-links-op {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &__container-col-col4 {
+      h4 {
+        padding: 0 0 1rem 0;
+        @include titleH4;
+      }
+    }
+    /* section blog-------------------- */
+    &__section-blog {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    &__title-blog {
+      @include titleH4();
+    }
+  
+    &__section-blog-blog1 {
+      height: 8.125rem;
+      width: 8.9375rem;
+      padding: 0.625rem;
+  
+      background: linear-gradient(
+        180deg,
+        rgba(67, 73, 101, 0.5) 0%,
+        rgba(67, 73, 101, 0) 100%
+      );
+      backdrop-filter: blur(40px);
+      /* Note: backdrop-filter has minimal browser support */
+  
+      border-radius: 1rem;
+    }
+    &__p-blog {
+      @include textoSpan(500);
+      font-size: 0.625rem;
+    }
+  
+    /* ----------------------------------- */
+  
+    &__container-container-group-buttons {
+      height: 6em;
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding: 0 4rem;
+    }
+  
+    &__container-icons-link {
+      display: flex;
+      gap: 1em;
+      box-sizing: border-box;
+    }
+  
+    &__container-copyright span {
+      @include text-format(1rem, 400, 0.07em, $color-white);
+    }
+  }

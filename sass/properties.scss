@@ -1,0 +1,913 @@
+@use "./mixins" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamyli;
+}
+.section1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/image-32.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, #12243a 0%, rgba(40, 57, 77, 0) 100%);
+  }
+}
+/* .container-fixed {
+  
+
+  } */
+.container-fixed {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  &__container-logo {
+    @include flex-center(true, true, null);
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    @include p-m(1rem 4rem, null, border-box);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14rem;
+      width: 100%;
+
+      pointer-events: none;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 69, 113, 0.6) -70.07%,
+        rgba(0, 99, 161, 0) 29.93%
+      );
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+  }
+  &__info-evento {
+    background-color: $bg-event-info;
+    @include text-format(0.875rem, 400, 0.055em, $color-white);
+    @include flex-center(true, true, null);
+  }
+
+  &__navbar {
+    @include flex-center(false, false, 1rem);
+  }
+  &__navbar-link {
+    text-decoration: $linkDecoration;
+    cursor: pointer;
+    @include text-format(0.875rem, 600, 0.055em, $color-white);
+    &--blue {
+      background-color: #29618f;
+      border-radius: 0.7rem;
+      @include p-m(0.3rem, null, border-box);
+      @include text-format(0.875rem, 600, 0.055em, $color-white);
+      cursor: pointer;
+      text-decoration: $linkDecoration;
+    }
+  }
+  &__navbar-links-container {
+    @include flex-center(true, true, 1rem);
+  }
+  &__navbar-location-container {
+    @include flex-center(true, true, 0.2rem);
+  }
+
+  &__navbar-location-flag {
+    @include p-m(0 0.3rem 0 0, null, border-box);
+  }
+  &__navbar-location-img {
+    @include p-m(0 0.3rem 0 0, null, border-box);
+  }
+  &__navbar-location-text {
+    @include text-format(0.875rem, 400, 0.055em, $color-gris-opacity);
+    @include p-m();
+  }
+  &__navbar-profile-container {
+    @include flex-center(true, true);
+  }
+
+  &__navbar-separator {
+    border: solid 1px $color-white;
+  }
+}
+
+.container-title-button-p {
+  width: 60%;
+  height: 100vh;
+  position: relative;
+  z-index: 4;
+
+  @include flex-center(true, null, 1rem);
+  flex-direction: column;
+  @include p-m(4rem 4rem 0 4rem, 0, null);
+
+  &__title {
+    @include text-format(48px, 700, 0.055em, $color-white);
+    @include p-m(0, 0, border-box);
+  }
+  &__span-light {
+    @include text-format(3rem, 400, 0.055em, #fff);
+  }
+  &__p {
+    @include text-format(1rem, 400, 0.07em, $color-white);
+    padding: 0 0 8rem 0;
+  }
+  &__container-button {
+    @include flex-center(null, null, 1rem);
+  }
+  &__button {
+    @include button-light-blue-gradiente;
+  }
+  &__button--bg-transparent {
+    @include button-border-white-bg-transparent;
+  }
+}
+.section-view-led {
+  width: auto;
+  height: 1.2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+  &__span-led,
+  &__span-led--light-blue {
+    width: 1.5625rem;
+    height: 0.375rem;
+    background-color: $color-white;
+    border-radius: 3.125rem;
+  }
+  &__span-led--light-blue {
+    background-color: $color-light-blue;
+  }
+}
+
+.section-propiedades {
+  &__h2 {
+    @include p-m(2rem 4rem 0 4rem, null);
+
+    @include text-format(3rem, 700, 0.025em, $color-title-primary);
+  }
+  &__span--light-blue {
+    @include text-format(1.5rem, 700, 0.025em, $color-title-secondary);
+    display: block;
+  }
+  &__span--gris {
+    @include text-format(3rem, 700, 0.025em, $color-title-tertiary);
+  }
+  &__p {
+    @include text-format(1rem, 400, 0.07em, $color-title-tertiary);
+    @include p-m(0 4rem, null, null);
+  }
+  &__container-button {
+    @include flex-center(true, true, 0.5rem);
+    justify-content: flex-end;
+
+    @include p-m(0 4rem, null, null);
+    position: relative;
+  }
+  &__span-explore {
+    @include p-m(1rem 0, null);
+    @include text-format(14px, 800, 0.07em, $color-title-primary);
+  }
+  &__button-ver-mas {
+    @include c-button-blue-dark();
+  }
+  &__container-cards {
+    display: grid;
+    width: 100%;
+    @include p-m(0 4rem, null, null);
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas: "card-blur button-left wrapper-cards button-right";
+    gap: 2rem;
+    position: absolute;
+    z-index: 4;
+  }
+  &__card-blur {
+    grid-area: card-blur;
+    background: linear-gradient(
+      180deg,
+      rgba(67, 73, 101, 0.5) 0%,
+      rgba(67, 73, 101, 0) 100%
+    );
+    backdrop-filter: blur(40px);
+
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 1rem;
+    width: 15.625rem;
+    height: 21.875rem;
+  }
+  &__p-blur {
+    @include p-m(1rem, null, null);
+    @include text-format(14px, 400, null, $color-white);
+    grid-area: card-blur;
+  }
+  &__container-button-left {
+    grid-area: button-left;
+    @include flex-center(true, true, null);
+  }
+
+  &__wrapper-cards {
+    grid-area: wrapper-cards;
+
+    display: flex;
+    flex-direction: column;
+  }
+  &__flexbox-cards {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card {
+    width: 15.625rem;
+    height: 21.875rem;
+    position: relative;
+    @include flex-center();
+  }
+  &__container-info-absolute {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include p-m(1rem, null, null);
+  }
+  &__button-info-ubicacion {
+    @include p-m(0, 0, border-box);
+    @include flex-center(true, true, 0.5rem);
+    @include text-format(0.5625rem, 600, 0.05em, $color-white);
+    border: 0;
+    border-radius: 1.1rem;
+    width: 8rem;
+    height: 2rem;
+    background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+    cursor: pointer;
+  }
+  &__h2-info-ubicacion {
+    @include text-format(1.375rem, 700, 0.07em, $color-white);
+  }
+  &__span-info-ubicacion {
+    @include text-format(0.75rem, 400, 0.05em, #b3b3b3);
+  }
+  &__p-info-ubicacion {
+    @include text-format(0.875rem, 700, 0.05em, $color-white);
+  }
+  &__wrapper-ubicacion {
+    @include flex-center(false, true, 0.3rem);
+  }
+
+  &__container-leds {
+    grid-area: leds;
+    @include flex-center(true, true, 0.3rem);
+    @include p-m(1rem 0, null, null);
+  }
+  &__span-led,
+  &__span-led--light-blue {
+    @include span-led(false);
+  }
+  &__span-led--light-blue {
+    @include span-led(true);
+  }
+  &__container-button-right {
+    grid-area: button-right;
+    @include flex-center(true, true, null);
+    justify-content: flex-end;
+  }
+}
+
+.section-playa-img {
+  background-image: url("../img/playa-del-carmen.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "title" "parrafo" "name-location" "card-blog";
+  gap: 1rem;
+  margin-top: 15rem;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 70%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(48, 48, 48, 0.6) 0%,
+      rgba(109, 109, 109, 0) 61.98%
+    );
+  }
+  &__card-blog {
+    grid-area: card-blog;
+    @include p-m(7rem 4rem 7rem 4rem, 0, border-box);
+    @include flex-center(null, null, null);
+    justify-content: flex-end;
+    gap: 1.3rem;
+  }
+  &__blog {
+    width: 18rem;
+    height: 11.1875rem;
+    @include p-m(1rem, 0, border-box);
+    border-radius: 1.2rem;
+  }
+  &__h2-blog {
+    @include p-m(1rem, 0, border-box);
+    border-radius: 1rem;
+    @include text-format(1rem, 700, 0.07em, $color-white);
+    background: linear-gradient(
+      180deg,
+      rgba(67, 73, 101, 0.5) 0%,
+      rgba(67, 73, 101, 0) 100%
+    );
+    backdrop-filter: blur(40px);
+  }
+  &__div-blog {
+    @include flex-center(true, true, null);
+  }
+  &__p-blog {
+    @include p-m(1rem, 0, border-box);
+    @include text-format(1rem, 400, 0.07em, $color-white);
+  }
+  &__button-blog {
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    @include flex-center(true, true, null);
+  }
+  &__name-location {
+    @include p-m(1rem 4rem, 0, border-box);
+    grid-area: name-location;
+    @include flex-direction(column, 1rem);
+  }
+  &__li,
+  &__li--big {
+    list-style: none;
+    @include text-format(2rem, 500, null, rgba(255, 255, 255, 0.4));
+  }
+  &__li--big {
+    @include text-format(6rem, 500, null, $color-white);
+  }
+  &__p {
+    @include text-format(1rem, 400, 0.07em, $color-white);
+    @include p-m(0 4rem, 0, border-box);
+    opacity: 0.7;
+  }
+  &__title {
+    width: 100%;
+    grid-area: title;
+    text-align: center;
+    @include flex-center(true, true, null);
+    @include p-m(12rem 4rem 0, 0, border-box);
+  }
+
+  &__h2 {
+    @include text-format(3rem, 700, 0.025em, $color-title-primary);
+    line-height: 1;
+  }
+  &__span--light-blue {
+    @include text-format(1.5rem, 700, 0.025em, $color-white);
+    display: block;
+  }
+}
+
+.section-browse-listings {
+  @include p-m(0 4rem, null);
+  background: linear-gradient(305.55deg, #1a253f 56.08%, #2c406f 78.04%);
+  border-bottom: 16px solid #63b5b4;
+  backdrop-filter: blur(35px);
+  &__title {
+    @include p-m(1.5rem 0 0 0, null);
+
+    @include flex-center();
+    justify-content: space-between;
+  }
+  &__h2 {
+    @include text-format(3rem, 700, 0.025em, #fff);
+  }
+  &__span--light-blue {
+    display: block;
+    @include text-format(1.5rem, 700, 0.025em, #62b5b7);
+  }
+  &__button-arrow {
+    align-self: flex-end;
+
+    @include button-light-blue-gradiente($width: 23rem);
+  }
+  &__span-ordenar-por {
+    @include p-m(0.8rem 0, null);
+
+    display: block;
+    @include text-format(0.875rem, 400, 0.07em, #fff);
+  }
+  &__ul-filter {
+    border-bottom: 3px solid #fff;
+    @include p-m(0.5rem 1.5rem, null);
+    list-style: none;
+
+    @include flex-center(null, null, 1rem);
+  }
+
+  &__a-filter--active {
+    text-decoration: none;
+    @include text-format(1.25rem, 700, 0.07em, #fff);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 93%;
+      height: 100%;
+      bottom: -0.8rem;
+      border-bottom: 0.5rem solid #fff;
+    }
+  }
+  &__a-filter {
+    text-decoration: none;
+    @include text-format(1.25rem, 400, 0.07em, #fff);
+  }
+
+  &__preview-filter {
+    @include p-m(2rem 0 0 0, null);
+  }
+  &__wrapper-preview {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__container-button-blue {
+    @include flex-center(null, true);
+  }
+  &__button-blue {
+    @include c-button-blue-dark();
+  }
+  &__h2-filter {
+    width: 14.25rem;
+    @include text-format(2rem, 700, 0.07em, #fff);
+  }
+  &__wrapper-h2-ul-button {
+    @include flex-direction(column);
+  }
+  &__container-ubicacion {
+    @include flex-center(null, true, 0.4rem);
+  }
+  &__span-name-location {
+    @include text-format(0.875rem, 400, 0.05em, #b3b3b3);
+  }
+  &__ul-filter-s {
+    @include flex-direction(column, 0.3rem);
+    @include p-m(0 0.7rem, 0.5rem 0 0 0, null);
+  }
+  &__li-filter-s {
+    @include flex-center(null, true, 0.3rem);
+    @include text-format(0.875rem, 400, 0.07em, #fff);
+  }
+  &__img-li {
+    width: 0.8125rem;
+  }
+  &__button-filter-s {
+    margin-top: auto;
+    margin-bottom: 4rem;
+    width: 100%;
+
+    @include flex-center(null, true, 0.3rem);
+  }
+  &__span-explore {
+    @include text-format(0.875rem, 800, 0.07em, #fff);
+  }
+  &__button-white {
+    @include c-button-blue-dark();
+  }
+}
+
+.section-view-led-filter {
+  @include p-m(4rem 0, null);
+  width: auto;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: flex-end;
+  &__span-led,
+  &__span-led--light-blue {
+    width: 1.5625rem;
+    height: 0.375rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 3.125rem;
+  }
+  &__span-led--light-blue {
+    background-color: $color-light-blue;
+  }
+}
+.container-cards {
+  width: 100%;
+
+  &__wrapper-cards {
+    @include flex-center;
+    width: auto;
+    height: auto;
+  }
+  &__button-withe-opacity {
+    @include flex-center(null, true);
+  }
+  &__button-opacity {
+    @include c-button-blue-dark;
+  }
+  &__cards {
+    width: 100%;
+
+    @include flex-center;
+    justify-content: space-around;
+  }
+  &__card {
+    background-image: url("../img/img-properties.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-width: 20rem;
+    height: 35rem;
+    @include p-m(2rem, null);
+    @include flex-direction(column);
+    justify-content: space-between;
+    border-radius: 1.5rem;
+  }
+  &__button-dep {
+    @include button-light-blue-gradiente($width: auto);
+    padding: 0 1.5rem;
+  }
+  &__info-card {
+    width: 100%;
+    height: auto;
+    @include flex-direction(column, 0.5rem);
+  }
+  &__name-location-info {
+    @include text-format(2rem, 700, 0.07em, #fff);
+  }
+  &__c-ubicacion {
+    @include flex-center(null, true, 0.3rem);
+  }
+
+  &__span-info {
+    @include text-format(0.75rem, 400, 0.05em, #b3b3b3);
+  }
+  &__p-info {
+    @include text-format(0.75rem, 400, 0.05em, #b3b3b3);
+  }
+  &__span-precio {
+    display: block;
+    @include text-format(1.25rem, 400, -0.01em, #fff);
+  }
+
+  &__container-icon-img {
+    @include flex-center(null, true, 0.3rem);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #fff;
+  }
+  &__icon-img {
+    @include flex-center(null, true, 0.3rem);
+  }
+  &__img-icon {
+    @include flex-center();
+  }
+  &__span-info-icon {
+    @include text-format(0.7rem, 400, 0.05em, #b3b3b3);
+  }
+  &__p-ofert {
+    @include text-format(0.75rem, 400, 0.05em, #b3b3b3);
+  }
+  &__span-ofert {
+    display: block;
+    @include text-format(2.5rem, 700, -0.01em, #63b5b9);
+  }
+  &__container-button-ver-mas {
+    @include flex-center(null, true, 0.3rem);
+    justify-content: flex-end;
+  }
+  &__span-b-ver-mas {
+    @include text-format(0.875rem, 800, 0.07em, #fff);
+  }
+  &__button-ver-mas {
+    @include c-button-blue-dark;
+  }
+}
+.section4 {
+  @include p-m(4rem, null);
+  &__h2 {
+    width: 70%;
+    @include text-format(3rem, 700, 0.025em, #172641);
+  @include p-m(0 0 1rem 0,null);
+  }
+  &__span-light-blue {
+    display: block;
+    @include text-format(1.5rem, 700, 0.025em, #62b5b7);
+  }
+  &__container-img-cards {
+    @include flex-center();
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__container-cards {
+    
+    @include flex-center(null,true,1rem);
+    flex-wrap: wrap;
+    justify-content: space-between;
+@include p-m(0 4rem 0 0,null);
+
+  }
+  &__wrapper-ul{
+    height: 10.8125rem;
+    width: 19rem;
+    background: #ffffff;
+    box-shadow: 0px 1.25rem 2.5rem rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    @include flex-center(true,true)
+  }
+  &__ul {   
+    @include flex-center(true,null,1rem);
+    flex-direction: column;
+    list-style: none;  
+  }
+  &__li {
+    
+    @include flex-center(null, true, 0.3rem);
+  @include text-format(0.9rem, 300, 0.08em, #000)
+  }
+  &__container-img{
+    @include flex-center();
+  }
+}
+
+
+.section-footer {
+  /* 
+    background-color: $bgFondo; */
+  background-image: url("../img/bgFondo.png");
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  /*  background-position: center center; */
+  background-size: cover;
+  position: relative;
+
+  &__img-footer {
+    width: 100%;
+    height: 30em;
+    background-color: #2894ecd7;
+  }
+
+  &__container-logo {
+    padding: 6rem 0 0 0;
+    img {
+      display: block;
+      margin: 0 0 0 5rem;
+      padding: 3rem 0;
+    }
+  }
+  &__container-col {
+    display: flex;
+    width: calc(100vw - 10rem);
+    margin: 0 5rem;
+    justify-content: space-between;
+  }
+
+  &__col1-section-nosotros {
+    height: 11.625rem;
+    width: 13.625rem;
+  }
+  &__p-nosotros {
+    margin: 0;
+    @include text-format(0.8125rem, 400, null, $color-white);
+    opacity: 0.5;
+  }
+  &__h4-nosotros {
+    @include titleH4;
+    padding: 0 0 1rem 0;
+  }
+  &__col1-section-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__h4-contacto {
+    @include titleH4();
+    padding: 0 0 1rem 0;
+  }
+  /* links contacto estilos */
+  &__container-links-contacto {
+    display: flex;
+    width: 15.625rem;
+  }
+
+  &__container-links-link {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    img {
+      margin-left: 0.4rem;
+    }
+    span {
+      @include textoSpan(400);
+    }
+  }
+
+  &__container-links-telephone {
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+    height: 2.625rem;
+    width: 12rem;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+    border-radius: 30px;
+    text-decoration: none;
+
+    img {
+      height: 1rem;
+      width: 16.222978591918945px;
+      margin-left: 0.4rem;
+    }
+    span {
+      @include textoSpan(800);
+    }
+  }
+  /* ------------------------------------------ */
+  &__container-links-servicios {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-cat-prop {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-op {
+    text-decoration: none;
+
+    span {
+      @include textoSpan(400);
+      font-size: 1.25rem;
+    }
+  }
+  &__container-links-partners {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-comunidad {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-op2 {
+    text-decoration: none;
+    span {
+      @include textoSpan(400);
+      font-size: 1.25rem;
+    }
+  }
+
+  &__container-col-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__col2-section-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col2-section-cat-prop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col2-section-links-op {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__container-col-col3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__col3-section-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__h4-partners {
+    padding: 0 0 1rem 0;
+    @include titleH4;
+  }
+  &__col3-section-comunidades {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col3-section-links-op {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__container-col-col4 {
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  /* section blog-------------------- */
+  &__section-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  &__title-blog {
+    @include titleH4();
+  }
+
+  &__section-blog-blog1 {
+    height: 8.125rem;
+    width: 8.9375rem;
+    padding: 0.625rem;
+
+    background: linear-gradient(
+      180deg,
+      rgba(67, 73, 101, 0.5) 0%,
+      rgba(67, 73, 101, 0) 100%
+    );
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 1rem;
+  }
+  &__p-blog {
+    @include textoSpan(500);
+    font-size: 0.625rem;
+  }
+
+  /* ----------------------------------- */
+
+  &__container-container-group-buttons {
+    height: 6em;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 0 4rem;
+  }
+
+  &__container-icons-link {
+    display: flex;
+    gap: 1em;
+    box-sizing: border-box;
+  }
+
+  &__container-copyright span {
+    @include text-format(1rem, 400, 0.07em, $color-white);
+  }
+}

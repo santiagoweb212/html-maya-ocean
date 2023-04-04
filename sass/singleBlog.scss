@@ -1,0 +1,706 @@
+@use "./mixins" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamyli;
+  line-height: 1;
+}
+.section1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/image-112.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+/* .container-fixed {
+  
+
+  } */
+.container-fixed {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  &__container-logo {
+    @include flex-center(true, true, null);
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    @include p-m(1rem 4rem, null, border-box);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14rem;
+      width: 100%;
+
+      pointer-events: none;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 69, 113, 0.6) -70.07%,
+        rgba(0, 99, 161, 0) 29.93%
+      );
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+  }
+  &__info-evento {
+    background-color: $bg-event-info;
+    @include text-format(0.875rem, 400, 0.055em, $color-white);
+    @include flex-center(true, true, null);
+  }
+
+  &__navbar {
+    @include flex-center(false, false, 1rem);
+  }
+  &__navbar-link {
+    text-decoration: $linkDecoration;
+    cursor: pointer;
+    @include text-format(0.875rem, 600, 0.055em, $color-white);
+    &--blue {
+      background-color: #29618f;
+      border-radius: 0.7rem;
+      @include p-m(0.3rem, null, border-box);
+      @include text-format(0.875rem, 600, 0.055em, $color-white);
+      cursor: pointer;
+      text-decoration: $linkDecoration;
+    }
+  }
+  &__navbar-links-container {
+    @include flex-center(true, true, 1rem);
+  }
+  &__navbar-location-container {
+    @include flex-center(true, true, 0.2rem);
+  }
+
+  &__navbar-location-flag {
+    @include p-m(0 0.3rem 0 0, null, border-box);
+  }
+  &__navbar-location-img {
+    @include p-m(0 0.3rem 0 0, null, border-box);
+  }
+  &__navbar-location-text {
+    @include text-format(0.875rem, 400, 0.055em, $color-gris-opacity);
+    @include p-m();
+  }
+  &__navbar-profile-container {
+    @include flex-center(true, true);
+  }
+
+  &__navbar-separator {
+    border: solid 1px $color-white;
+  }
+}
+
+.container-title-button-p {
+  width: 55%;
+  height: 100vh;
+
+  @include flex-center(true, null, 1rem);
+  flex-direction: column;
+  @include p-m(4rem 4rem 0 4rem, 0, null);
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, #12243a 0%, rgba(40, 57, 77, 0) 100%);
+  }
+  &__title {
+    @include text-format(48px, 700, 0.055em, $color-white);
+    @include p-m(0, 0, border-box);
+  }
+  &__p {
+    @include text-format(1rem, 400, 0.07em, $color-white);
+    padding: 0 0 8rem 0;
+  }
+  &__container-button {
+    @include flex-center(null, null, 1rem);
+  }
+  &__button {
+    @include button-light-blue-gradiente;
+  }
+  &__button--bg-transparent {
+    @include button-border-white-bg-transparent;
+  }
+}
+/* --------------formulario---------------------- */
+
+.section2 {
+  @include p-m(0 4rem);
+
+  &__wrapper-blog {
+    @include flex-center();
+    justify-content: space-between;
+  }
+  &__container-categories-post {
+    @include p-m(1.3rem 0,null);
+    background-color: #eaeaea;
+    width: 16.0625rem;
+    height: 40.75rem;
+  }
+  &__h2-categories-post {
+    @include text-format(0.875rem, 500, 0.07em, #1a253f);
+    text-align: center;
+  }
+  &__container-links {
+    @include p-m(1rem, null);
+    @include flex-center(null, null, 1rem);
+    flex-wrap: wrap;
+  }
+  &__link--light-blue {
+    text-decoration: none;
+    background: #50aade;
+    backdrop-filter: blur(0.125rem);
+    /* Note: backdrop-filter has minimal browser support */
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    @include text-format(0.75rem, 500, 0.07em, #fff);
+  cursor: pointer;
+  }
+  &__link-s3 {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    @include text-format(0.75rem, 500, 0.07em, #4fa9dd);
+    border: 1px solid #4fa9dd;
+    backdrop-filter: blur(0.125rem);
+    /* Note: backdrop-filter has minimal browser support */
+cursor: pointer;
+    border-radius: 1.875rem;
+  }
+}
+
+.section3 {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(305.55deg, #013563 56.08%, #2c406f 78.04%);
+  border-bottom: 16px solid #63b5b4;
+  backdrop-filter: blur(35px);
+  /* Note: backdrop-filter has minimal browser support */
+  @include p-m(0 4rem);
+  &__title {
+    width: 100%;
+    height: 10rem;
+
+    flex-direction: column;
+    @include flex-center();
+    justify-content: flex-end;
+    @include text-format(3rem, 700, 0.055em, $color-white);
+  }
+  &__title-span--light-blue {
+    display: block;
+    @include text-format(1.5rem, 700, 0.025em, $color-light-blue);
+  }
+  &__wrapper-cards {
+    width: 100%;
+    height: calc(100% - 10rem);
+
+    @include flex-center(null, true);
+    justify-content: space-between;
+  }
+  &__card-preview {
+    @include flex-center(null, null, 2rem);
+
+    width: 33rem;
+    height: 20rem;
+  }
+  &__wrapper-name-p-button {
+    height: 100%;
+    width: 100%;
+    @include p-m(2rem);
+    @include flex-direction(column, 0.5rem);
+  }
+  &__name-blog {
+    @include text-format(0.875rem, 700, 0.055em, $color-white);
+  }
+  &__span-date {
+    @include text-format(0.625rem, 700, 0.055em, rgba(255, 255, 255, 0.8));
+  }
+  &__p-blog {
+    @include text-format(0.8125rem, 400, 0.055em, #87989f);
+  }
+  &__ver-mas {
+    @include p-m(6.4rem 0 0 0, 0);
+    @include flex-center(null, true, 0.3rem);
+  }
+  &__span-ver-mas {
+    @include text-format(0.8125rem, 800, 0.07em, #fff);
+    text-decoration: overline 2px;
+  }
+  &__button-circle-white {
+    @include c-button-blue-dark;
+  }
+  &__cards {
+    height: 20rem;
+    @include flex-center(null, null, 3rem);
+  }
+  &__card {
+    position: relative;
+
+    width: 15.5rem;
+    height: 100%;
+  }
+  &__img-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  &__container-info {
+    width: 100%;
+    height: 5rem;
+    border-radius: 16px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    @include flex-center(true, true, 0.5rem);
+    flex-direction: column;
+  }
+  &__h2-card {
+    @include text-format(15px, 700, 0.055em, #172641);
+    text-align: center;
+  }
+  &__span-date--gris {
+    width: 100%;
+    text-align: center;
+    @include text-format(0.625rem, 700, 0.055em, rgba(179, 179, 179, 0.74));
+  }
+}
+
+
+
+.section-formulario {
+  width: 100%;
+
+  @include p-m(4rem, null);
+  &__title-h2 {
+    @include text-format(3rem, 700, 0.025em, #1a253f);
+    @include p-m(2rem 0 0 0, null);
+  }
+  &__light-blue {
+    display: block;
+    @include text-format(1.5rem, 700, 0.025em, #62b5b7);
+  }
+  &__wrapper {
+    @include flex-center();
+
+    @include p-m(2rem 0 0 0);
+  }
+  &__box-left {
+    width: 50%;
+
+    @include p-m(0 2.5rem 0 0, 0);
+    flex-direction: column;
+    @include flex-center(null, null, 2rem);
+  }
+  &__p-left {
+    @include text-format(1rem, 400, 0.07em, #070d29);
+  }
+  &__ul {
+    @include flex-center(true, null, 0.5rem);
+    @include flex-direction(column);
+    list-style: none;
+  }
+  &__li {
+    @include flex-center(null, true, 0.3rem);
+    @include text-format(1rem, 600, 0.07em, #070d29);
+  }
+
+  /* borx right formulario */
+  &__box-right {
+    width: 50%;
+  }
+
+  &__container-form {
+    box-sizing: border-box;
+    height: 26rem;
+    width: 100%;
+    align-items: stretch;
+    background: #f3f3f3;
+    box-shadow: 0px 30px 40px rgba(23, 38, 65, 0.2);
+    border-radius: 1.875rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 4rem 4rem auto;
+    grid-template-areas:
+      "nombre apellido"
+      "email telefono"
+      "mensaje chekbox";
+    row-gap: 1rem;
+
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+  }
+  &__area-nombre {
+    grid-area: nombre;
+
+    display: flex;
+    flex-direction: column;
+
+    label {
+      @include label();
+    }
+    input {
+      @include input();
+    }
+  }
+  &__container-form-area-apellido {
+    grid-area: apellido;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
+    label {
+      @include label();
+    }
+    input {
+      @include input();
+    }
+  }
+  &__container-form-area-email {
+    grid-area: email;
+
+    display: flex;
+    flex-direction: column;
+    label {
+      @include label();
+    }
+    input {
+      @include input();
+    }
+  }
+  &__container-form-area-telefono {
+    grid-area: telefono;
+
+    display: flex;
+    flex-direction: column;
+    label {
+      @include label();
+    }
+    input {
+      @include input();
+    }
+  }
+  &__container-form-area-mensaje {
+    grid-area: mensaje;
+
+    display: flex;
+    flex-direction: column;
+    label {
+      @include label();
+    }
+    textarea {
+      background-color: #fff;
+      height: 6.75rem;
+      width: 15.7607rem;
+      border-radius: 0.9375rem;
+      resize: none;
+    }
+  }
+  &__container-form-area-chekbox {
+    grid-area: chekbox;
+
+    span {
+      @include label();
+    }
+  }
+  &__group-check {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    label {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.07em;
+      color: #606060;
+    }
+  }
+  &__c-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0 0 0;
+    height: 2.625rem;
+    width: 100%;
+  }
+  &__button {
+    @include text-format(0.875rem, 800, 0.07em, $color-white);
+    @include flex-center(true, true, 0.3rem);
+    border: none;
+    width: 12rem;
+    height: 2.625rem;
+    background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  /* ----------------------------formulario */
+}
+
+.section-footer {
+  /* 
+    background-color: $bgFondo; */
+  background-image: url("../img/bgFondo.png");
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  /*  background-position: center center; */
+  background-size: cover;
+  position: relative;
+
+  &__img-footer {
+    width: 100%;
+    height: 30em;
+    background-color: #2894ecd7;
+  }
+
+  &__container-logo {
+    padding: 6rem 0 0 0;
+    img {
+      display: block;
+      margin: 0 0 0 5rem;
+      padding: 3rem 0;
+    }
+  }
+  &__container-col {
+    display: flex;
+    width: calc(100vw - 10rem);
+    margin: 0 5rem;
+    justify-content: space-between;
+  }
+
+  &__col1-section-nosotros {
+    height: 11.625rem;
+    width: 13.625rem;
+  }
+  &__p-nosotros {
+    margin: 0;
+    @include text-format(0.8125rem, 400, null, $color-white);
+    opacity: 0.5;
+  }
+  &__h4-nosotros {
+    @include titleH4;
+    padding: 0 0 1rem 0;
+  }
+  &__col1-section-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__h4-contacto {
+    @include titleH4();
+    padding: 0 0 1rem 0;
+  }
+  /* links contacto estilos */
+  &__container-links-contacto {
+    display: flex;
+    width: 15.625rem;
+  }
+
+  &__container-links-link {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    img {
+      margin-left: 0.4rem;
+    }
+    span {
+      @include textoSpan(400);
+    }
+  }
+
+  &__container-links-telephone {
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+    height: 2.625rem;
+    width: 12rem;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+    border-radius: 30px;
+    text-decoration: none;
+
+    img {
+      height: 1rem;
+      width: 16.222978591918945px;
+      margin-left: 0.4rem;
+    }
+    span {
+      @include textoSpan(800);
+    }
+  }
+  /* ------------------------------------------ */
+  &__container-links-servicios {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-cat-prop {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-op {
+    text-decoration: none;
+
+    span {
+      @include textoSpan(400);
+      font-size: 1.25rem;
+    }
+  }
+  &__container-links-partners {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-comunidad {
+    text-decoration: none;
+    span {
+      @include textoSpan(400, 0.5);
+    }
+  }
+  &__container-links-op2 {
+    text-decoration: none;
+    span {
+      @include textoSpan(400);
+      font-size: 1.25rem;
+    }
+  }
+
+  &__container-col-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__col2-section-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col2-section-cat-prop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col2-section-links-op {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__container-col-col3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__col3-section-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__h4-partners {
+    padding: 0 0 1rem 0;
+    @include titleH4;
+  }
+  &__col3-section-comunidades {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  &__col3-section-links-op {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__container-col-col4 {
+    h4 {
+      padding: 0 0 1rem 0;
+      @include titleH4;
+    }
+  }
+  /* section blog-------------------- */
+  &__section-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  &__title-blog {
+    @include titleH4();
+  }
+
+  &__section-blog-blog1 {
+    height: 8.125rem;
+    width: 8.9375rem;
+    padding: 0.625rem;
+
+    background: linear-gradient(
+      180deg,
+      rgba(67, 73, 101, 0.5) 0%,
+      rgba(67, 73, 101, 0) 100%
+    );
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 1rem;
+  }
+  &__p-blog {
+    @include textoSpan(500);
+    font-size: 0.625rem;
+  }
+
+  /* ----------------------------------- */
+
+  &__container-container-group-buttons {
+    height: 6em;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 0 4rem;
+  }
+
+  &__container-icons-link {
+    display: flex;
+    gap: 1em;
+    box-sizing: border-box;
+  }
+
+  &__container-copyright span {
+    @include text-format(1rem, 400, 0.07em, $color-white);
+  }
+}
