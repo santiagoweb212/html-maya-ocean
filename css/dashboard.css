@@ -7,23 +7,10 @@
   font-family: "Poppins", sans-serif;
 }
 
-.wrapper-main {
-  position: relative;
-}
-.wrapper-main::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(37, 37, 37, 0.6);
-}
-
 .section1 {
   width: 100%;
   height: 100vh;
-  background-image: url("../img/image-32.png");
+  background-image: url("../img/image-114.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -230,496 +217,295 @@
   background-color: #50aade;
 }
 
+/* -----------------------section2-------------------- */
 .section2 {
-  padding: 1rem 4rem;
+  position: relative;
+  padding: 0 4rem;
+  width: 100%;
+  height: 12rem;
 }
-.section2__h2 {
-  padding: 3rem 0 1rem 0;
+.section2__position-absolute {
+  position: absolute;
+  left: 0;
+  display: flex;
+  padding: 0 4rem;
+  width: 100%;
+  top: -5rem;
+  justify-content: space-between;
+}
+.section2__card-color {
+  height: 17.6875rem;
+  width: 15.4375rem;
+  background-color: #4faadd;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.section2__card-color--dark {
+  height: 17.6875rem;
+  width: 15.4375rem;
+  background-color: #29618f;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.section2__card-img {
+  position: relative;
+  height: 17.6875rem;
+  width: 15.4375rem;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.section2__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.section2__h2-card {
+  display: flex;
+  z-index: 100;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ------------------------------------------------------- */
+/*--------------section turoriales------------------------- */
+.section-tutoriales {
+  padding: 0 4rem;
+}
+.section-tutoriales__container-h2-op {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.section-tutoriales__h2-title {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.025em;
   color: #1a253f;
 }
-.section2__span-light-blue {
-  display: block;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  color: #62b5b7;
-}
-.section2__p {
-  padding: 1rem 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  letter-spacing: #000;
-}
-.section2__wrapper-cards {
-  display: flex;
-  padding: 2rem 0 4rem 0;
-  justify-content: space-between;
-}
-.section2__card {
-  border-radius: 1rem;
-  width: 20.5625rem;
-}
-.section2__card-img {
-  background-image: url("../img/chris-montgomery-smgTvepind4-unsplash-1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 9rem;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-}
-.section2__span-card {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-}
-.section2__card-p {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: #000;
-  line-height: 22px;
-}
-.section2__container-agenda {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem 0 6rem 0;
-  margin: 0;
-  width: 100%;
-  height: auto;
-  background: rgba(0, 101, 242, 0.12);
-}
-.section2__h2-black {
-  padding: 2rem 0 0 0;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #000;
-}
-.section2__container-main-agenda {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.section2__container-div {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.section2__wrapper-agenda {
-  display: flex;
-  gap: 1rem;
-}
-.section2__img {
+.section-tutoriales__ul {
   display: flex;
   align-items: center;
+  gap: 1rem;
+  list-style: none;
 }
-.section2__span-date {
-  display: block;
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #000;
-  line-height: 1.5625rem;
-}
-.section2__span-recepcion {
-  font-size: 1.125rem;
-  font-weight: 800;
-  letter-spacing: 0.075em;
-  color: #000;
-}
-.section2__p-agenda {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #000;
-  line-height: 22px;
-}
-.section2__container-citas-agendadas {
-  padding-left: 3.5rem;
-}
-
-.section3 {
-  padding: 0 4rem;
-}
-.section3__title-frequently {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #000;
-  padding: 4rem 0;
-}
-.section3__container-pregunta {
-  display: flex;
-  justify-content: space-between;
-}
-.section3__p-pregunta {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #000;
-}
-.section3__p-respuesta {
-  padding: 0.6rem 0 2rem 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #000;
-}
-.section3__container-pregunta--solo {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
-  border-top: 1px solid #000000;
-  width: 100%;
-}
-.section3__title-h2-ubicacion {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #000;
-  padding: 4rem 0;
-}
-
-.section5 {
-  padding: 4rem;
-}
-.section5__img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-
-.section-formulario {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  padding: 2rem 4rem;
-  box-sizing: border-box;
-}
-.section-formulario__modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+.section-tutoriales__li {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.section-formulario__container-modal {
-  height: auto;
-  width: 800px;
-  background-color: #fff;
-  border-radius: 1rem;
-  padding: 2rem;
+.section-tutoriales__a {
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #080808;
+}
+.section-tutoriales__a--active {
+  padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #080808;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+.section-tutoriales__container-cards {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0 4.5rem 0;
+}
+.section-tutoriales__card {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  box-shadow: 0px 30px 40px rgba(23, 38, 65, 0.2);
+  gap: 1rem;
 }
-.section-formulario__container-close-modal {
+.section-tutoriales__container-img img {
+  border-radius: 1rem;
+}
+.section-tutoriales__h2-card {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #080808;
+}
+.section-tutoriales__container-level {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
 }
-.section-formulario__button-close {
+.section-tutoriales__wrapper-img-span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.section-tutoriales__span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(8, 8, 8, 0.75);
+}
+.section-tutoriales__button {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
+  border-radius: 1.875rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------section-instructores------------ */
+.section-instructores {
+  background: #152840;
+  border-bottom: 16px solid #63b5b4;
+  padding: 0 4rem;
+}
+.section-instructores__h2 {
+  padding: 2rem 0 0 0;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  color: #fff;
+}
+.section-instructores__container-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0 6rem 0;
+}
+.section-instructores__card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  height: 6.5625rem;
+  width: 15.875rem;
+  border-radius: 1.25rem;
+  background-color: #131b2d;
+}
+.section-instructores__h2-card {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #63b5b4;
+}
+.section-instructores__container-cargo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-instructores__span-cargo {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+.section-instructores__button-cargo {
   background-color: transparent;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.section-formulario__container-check-green {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+/* ------------------------------------------------------------ */
+/* ---------------------section videos de youtube----------------------- */
+.section-videos-youtube {
+  padding: 0 4rem;
 }
-.section-formulario__h2-title-modal {
+.section-videos-youtube__title-h2 {
+  padding: 4rem 0;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.025em;
   color: #1a253f;
 }
-.section-formulario__p-modal {
+.section-videos-youtube__p {
+  width: 32.5625rem;
   font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  color: #070d29;
-  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.055em;
+  color: #000;
 }
-.section-formulario__container-button-modal {
+
+.container-cards-videos-yb__wrapper-cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
-.section-formulario__button-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  color: #fff;
-  background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
-  border-radius: 1.875rem;
-  padding: 1rem 3rem;
-  border: none;
-}
-.section-formulario__group-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-.section-formulario__title-h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  color: #1a253f;
-}
-.section-formulario__light-blue {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  color: #62b5b7;
-}
-.section-formulario__wrapper {
-  display: flex;
-  padding: 2rem 0 0 0;
-}
-.section-formulario__box-left {
-  width: 50%;
-  padding: 0 2.5rem 0 0;
-  margin: 0;
-  flex-direction: column;
-  display: flex;
-  gap: 2rem;
-}
-.section-formulario__p-left {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  color: #070d29;
-}
-.section-formulario__ul {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-}
-.section-formulario__li {
+.container-cards-videos-yb__container-button {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  color: #070d29;
-}
-.section-formulario__box-right {
-  width: 50%;
-}
-.section-formulario__container-form {
-  box-sizing: border-box;
-  height: 26rem;
-  width: 100%;
-  align-items: stretch;
-  background: #f3f3f3;
-  box-shadow: 0px 30px 40px rgba(23, 38, 65, 0.2);
-  border-radius: 1.875rem;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 4rem 4rem auto;
-  grid-template-areas: "nombre apellido" "email telefono" "mensaje chekbox";
-  row-gap: 1rem;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-}
-.section-formulario__area-nombre {
-  grid-area: nombre;
-  display: flex;
-  flex-direction: column;
-}
-.section-formulario__area-nombre label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__area-nombre input {
-  height: 2.5rem;
-  width: 15.7607rem;
-  border-radius: 0.9375rem;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.section-formulario__container-form-area-apellido {
-  grid-area: apellido;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
-}
-.section-formulario__container-form-area-apellido label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__container-form-area-apellido input {
-  height: 2.5rem;
-  width: 15.7607rem;
-  border-radius: 0.9375rem;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.section-formulario__container-form-area-email {
-  grid-area: email;
-  display: flex;
-  flex-direction: column;
-}
-.section-formulario__container-form-area-email label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__container-form-area-email input {
-  height: 2.5rem;
-  width: 15.7607rem;
-  border-radius: 0.9375rem;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.section-formulario__container-form-area-telefono {
-  grid-area: telefono;
-  display: flex;
-  flex-direction: column;
-}
-.section-formulario__container-form-area-telefono label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__container-form-area-telefono input {
-  height: 2.5rem;
-  width: 15.7607rem;
-  border-radius: 0.9375rem;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.section-formulario__container-form-area-mensaje {
-  grid-area: mensaje;
-  display: flex;
-  flex-direction: column;
-}
-.section-formulario__container-form-area-mensaje label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__container-form-area-mensaje textarea {
-  background-color: #fff;
-  height: 6.75rem;
-  width: 15.7607rem;
-  border-radius: 0.9375rem;
-  resize: none;
-}
-.section-formulario__container-form-area-chekbox {
-  grid-area: chekbox;
-}
-.section-formulario__container-form-area-chekbox span {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-  margin: 0;
-  padding: 0;
-}
-.section-formulario__group-check {
-  margin-bottom: 0.5rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-.section-formulario__group-check label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.875rem;
-  letter-spacing: 0.07em;
-  color: #606060;
-}
-.section-formulario__c-button {
-  display: flex;
   justify-content: flex-end;
-  margin: 1rem 0 0 0;
-  height: 2.625rem;
-  width: 100%;
 }
-.section-formulario__button {
+.container-cards-videos-yb__span-ver-mas {
   font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.07em;
-  color: #ffffff;
+  color: #1a253f;
+}
+.container-cards-videos-yb__button {
+  background-color: transparent;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.3rem;
-  border: none;
-  width: 12rem;
-  height: 2.625rem;
-  background: linear-gradient(90deg, #4fa9dd 37.5%, #63b5b4 100%);
-  border-radius: 30px;
 }
 
-button {
-  cursor: pointer;
+.comunidad-card-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0 4rem 0;
+}
+.comunidad-card-container__card {
+  background: #ffffff;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 0;
+  width: 14.875rem;
+  height: 9.125rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+.comunidad-card-container__container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comunidad-card-container__p-link {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  color: #070d29;
 }
 
+/* ------------------------------------------- */
+/* footer */
 .section-footer {
   /* 
-    background-color: $bgFondo; */
+      background-color: $bgFondo; */
   background-image: url("../img/bgFondo.png");
   width: 100%;
   height: auto;
@@ -1052,4 +838,4 @@ button {
   font-weight: 400;
   letter-spacing: 0.07em;
   color: #ffffff;
-}/*# sourceMappingURL=thanks.css.map */
+}/*# sourceMappingURL=dashboard.css.map */
